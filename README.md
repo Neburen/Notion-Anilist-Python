@@ -19,12 +19,14 @@ Finally copy your "Internal Integration Token"
 # 2. Create the database
 2 options:
 
-1.- (Easy) [Copying the template](https://nebur.notion.site/Notion-Anilist-Python-15d384e86fd84feda877971a0d7ea15a)
+(Later you can modify other properties in the database with both options)
+
+1.- (Easy) [Duplicating the template](https://nebur.notion.site/Notion-Anilist-Python-15d384e86fd84feda877971a0d7ea15a) 
 
 2.- (Hard) Create your own database. You will need to add these properties with these names: 
 
-    (type Select) Tags
-    (type Select) Status with options: Not Released, Releasing and Finished
+    (type Select) Tags with options: Watch, Watching and Watched
+    (type Select) Status with options: Not yet released, Releasing and Finished
     (type Number) Episodes
     (type Date) End date
 
@@ -40,7 +42,7 @@ Now look at the URL and save the Database ID ![App Screenshot](https://files.rea
 Open Notion.py and paste your "Internal Integration Token" in token variable and the Database ID in databaseId variable
 
 # 5. Run Notion.py !!!
-Enjoy!
+Enjoy! (Watched animes won't be updated)
 
 ## Contributing
 Contributions are always welcome!
