@@ -1,7 +1,10 @@
 # Notion-Anilist-Python
-This program will automatically update properties like Anime Status, Episodes or End date from your Notion Database collecting the data from AniList
+This program will automatically update the properties Anime Status, Episodes and End date from your Notion Anime Database collecting the data from AniList.
 
-Steps: 
+# Requirements
+* Tested on Python 3.6 and 3.9
+
+# Steps: 
 - [1. Create a new integration in Notion](#1-create-a-new-integration-in-notion)
 - [2. Create the database](#2-create-the-database)
 - [3. Grant access to the database](#3-Grant-access-to-the-database)
@@ -37,3 +40,9 @@ Now look at the URL and save the Database ID ![App Screenshot](https://files.rea
 Open Notion.py and paste your "Internal Integration Token" in token variable and the Database ID in databaseId variable
 
 # 5. Run Notion.py !!!
+Enjoy!
+
+## Contributing
+Contributions are always welcome!
+
+AniList allows to see a lot of data relationated with an anime, the properties you want to see in Notion can be expanded
