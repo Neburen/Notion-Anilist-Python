@@ -46,11 +46,26 @@ for anime in dicc["results"]:
             # Format the anime info
             data = [animeInfo["status"], animeInfo["episodes"],
                     str(animeInfo["endDate"])]
+
+            # Format Status
+            if data[0] == "FINISHED":
+                data[0] = "Finished"
+            elif data[0] == "RELEASING":
+                data[0] = "Releasing"
+            elif data[0] == "NOT_YET_RELEASED":
+                data[0] = "Not yet released"
+            elif data[0] == "CANCELLED":
+                data[0] = "Cancelled"
+
+            # Format number of episodes
             try:
                 data[1] = int(data[1])
-            except ValueError:
+            except:
                 data[1] = "None"
+            # Format dates
             try:
+                data[2] = json.loads(data[2].replace("'", '"')
+                                     .replace("None", "null"))
                 date = f"{data[2]['year']}-{data[2]['month']:02}-{data[2]['day']:02}"
             except:
                 date = "null"
