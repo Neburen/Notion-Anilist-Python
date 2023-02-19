@@ -11,17 +11,29 @@ headers = {"Authorization": "Bearer " + token,
            "Content-Type": "application/json",
            "Notion-Version": "2022-06-28"}
 
+filters = {  # Animes watched are not updated
+    "property": "Tags",
+    "select": {
+        "does_not_equal": "Watched"
+    }
+}
+
+payload = {
+    "filter": filters
+}
+
 # Get database from Notion
 req = requests.post(
-    f"https://api.notion.com/v1/databases/{databaseId}/query", headers=headers)
+    f"https://api.notion.com/v1/databases/{databaseId}/query", json=payload, headers=headers)
 dicc = json.loads(req.text)
 
+isLongList = True
 # Iterate over the database
 print("Updating animes: ")
-control = False
-for anime in dicc["results"]:
-    # Animes watched are not updated
-    if anime["properties"]["Tags"]["select"]["name"] != "Watched":
+while isLongList:
+    isLongList = dicc["has_more"]
+    control = False
+    for anime in dicc["results"]:
         print(anime["properties"]["Name"]["title"]
               [0]["plain_text"]+"...", end=" ", flush=True)
         # Try to get the anime info, if it fails, try again removing last 2 characters
@@ -99,4 +111,18 @@ for anime in dicc["results"]:
             if response.status_code == 200:
                 print("Updated")
         control = False
+
+    # If the list is 100+ items, get the next 100 items
+    if isLongList:
+        payload = {
+            "filter": filters,
+            "start_cursor": dicc["next_cursor"]
+        }
+        req = requests.post(
+            f"https://api.notion.com/v1/databases/{databaseId}/query", json=payload, headers=headers)
+        dicc = json.loads(req.text)
+
+        # Relaxing pause for APIS
+        input("What a long list! 100 items were updated this time.\n Press enter to continue updating...")
+
 input("Press enter to exit")
