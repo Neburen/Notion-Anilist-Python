@@ -52,8 +52,9 @@ def getAnime(nombre, manualSelect=False):
             curr_anime = data['data']['Page']['media'][i]['title']['romaji']
             print(f"{counter}. {curr_anime}")
             counter += 1
-        print(f"{counter}. Exit")
+
         if counter > 1:
+            print(f"{counter}. Exit")
             # ask user to select anime
             while True:
                 try:
