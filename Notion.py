@@ -11,11 +11,21 @@ headers = {"Authorization": "Bearer " + token,
            "Content-Type": "application/json",
            "Notion-Version": "2022-06-28"}
 
-filters = {  # Animes watched are not updated
-    "property": "Tags",
-    "select": {
-        "does_not_equal": "Watched"
-    }
+filters = {  # Only animes Watching and Watch are updated
+    "or": [
+        {
+            "property": "Tags",
+            "select": {
+                "equals": "Watch"
+            }
+        },
+        {
+            "property": "Tags",
+            "select": {
+                "equals": "Watching"
+            }
+        }
+    ]
 }
 
 payload = {
@@ -46,10 +56,13 @@ while isLongList:
             try:
                 animeInfo = getAnime(
                     anime["properties"]["Name"]["title"][0]["plain_text"][:-2], manualSelect=True)
+                if animeInfo == -1:
+                    # If the user doesn't select an anime or is not found, the anime is not updated
+                    raise Exception("Not found")
                 control = True
             except Exception:
                 print("\n" + anime["properties"]["Name"]["title"]
-                      [0]["plain_text"], "is not updating")
+                      [0]["plain_text"], "is not updating!\n")
 
         # If the anime info is found, update the Notion database
         if control:
