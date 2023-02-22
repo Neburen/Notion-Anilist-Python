@@ -3,6 +3,7 @@ This program will automatically update the properties Anime Status, Episodes and
 
 # Requirements
 * Tested in Python 3.6 and 3.9
+* pip install requests
 
 # Steps: 
 - [1. Create a new integration in Notion](#1-create-a-new-integration-in-notion)
@@ -27,7 +28,7 @@ Finally copy your "Internal Integration Token"
 2.- (Hard) Create your own database. You will need to add these properties with these names: 
 
     (type Select) Tags with options: Watch, Watching and Watched
-    (type Select) Status with options: Not yet released, Releasing and Finished
+    (type Select) Status
     (type Number) Episodes
     (type Date) End date
 
