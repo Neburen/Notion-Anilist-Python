@@ -23,7 +23,7 @@ Finally copy your "Internal Integration Token"
 
 (Later you can modify other properties in the database with both options)
 
-1.- (Easy) [Duplicating the template](t.ly/loy7) 
+1.- (Easy) [Duplicating the template](https://nebur.notion.site/Notion-Anilist-Python-15d384e86fd84feda877971a0d7ea15a) 
 
 2.- (Hard) Create your own database. You will need to add these properties with these names: 
 
@@ -44,7 +44,7 @@ Now look at the URL and save the Database ID ![App Screenshot](https://files.rea
 
 I've made a website where you can try the code. It has some restrictions but mostly works fine.
 
-You only need to follow the steps up to number 3 (included) [Website](https://t.ly/qOgV)
+You only need to follow the steps up to number 3 (included) [Website](https://neburen.pythonanywhere.com/)
 
 # 5. Update the code
 Open Notion.py and paste your "Internal Integration Token" in token variable and the Database ID in databaseId variable
