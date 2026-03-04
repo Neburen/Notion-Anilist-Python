@@ -9,9 +9,8 @@ This program will automatically update the properties Anime Status, Episodes and
 - [1. Create a new integration in Notion](#1-create-a-new-integration-in-notion)
 - [2. Create the database](#2-create-the-database)
 - [3. Grant access to the database](#3-Grant-access-to-the-database)
-- [4. Try the website (alternative)](#4-try-the-website-alternative)
-- [5. Update the code](#4-Update-the-code)
-- [6. Run Notion.py !!!](#5-run-notionpy-)
+- [4. Update the code](#4-Update-the-code)
+- [5. Run Notion.py !!!](#5-run-notionpy-)
 
 # 1. Create a new integration in Notion 
 First go to: [Notion integrations](https://www.notion.so/my-integrations), create a new integration with the name you want, make sure to check all "Content Capabilities" and "Comment Capabilities", also check only "Read user information without email addresses" in User Capabilities and Submit.
