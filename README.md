@@ -40,16 +40,10 @@ search and select your integration in the search bar.
 
 Now look at the URL and save the Database ID ![App Screenshot](https://files.readme.io/62e5027-notion_database_id.png)
 
-# 4. Try the website (alternative)
-
-I've made a website where you can try the code. It has some restrictions but mostly works fine.
-
-You only need to follow the steps up to number 3 (included) [Website](https://neburen.pythonanywhere.com/)
-
-# 5. Update the code
+# 4. Update the code
 Open Notion.py and paste your "Internal Integration Token" in token variable and the Database ID in databaseId variable
 
-# 6. Run Notion.py !!!
+# 5. Run Notion.py !!!
 Enjoy! (Watched animes won't be updated)
 
 ## Contributing
